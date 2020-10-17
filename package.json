@@ -1,0 +1,19 @@
+{
+  "name": "graphql_express",
+  "version": "1.0.0",
+  "description": "simple graphql server",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "json-server": "json-server --watch "
+  },
+  "author": "Sodium",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "express": "^4.17.1",
+    "express-graphql": "^0.11.0",
+    "graphql": "^15.3.0",
+    "json-server": "^0.16.2"
+  }
+}
