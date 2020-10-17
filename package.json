@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "dev": "nodemon server.js",
-    "json-server": "json-server --watch "
+    "json-server": "json-server --watch data/test-data.json"
   },
   "author": "Sodium",
   "license": "MIT",

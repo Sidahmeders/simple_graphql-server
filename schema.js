@@ -1,3 +1,4 @@
+const axios = require('axios');
 const {
     GraphQLObjectType,
     GraphQLString,
@@ -31,9 +32,11 @@ const RootQuery = new GraphQLObjectType({
                 id: {type: GraphQLString}
             },
             resolve(parentVal, args) {
-                for (let c of customers) {
-                    if (c.id === args.id) return c;
-                }
+                // for (let c of customers) {
+                //     if (c.id === args.id) return c;
+                // }
+
+                return axios.get(`http://localhost:3000/cusomers/${args.id}`).then(res => res.data)
             }
         },
         customers: {

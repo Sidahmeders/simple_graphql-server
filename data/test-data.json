@@ -1,0 +1,9 @@
+{
+    "cusomers": [
+        {"id": "1", "name": "Sodium united", "email": "united@gmail.com", "age": 23},
+        {"id": "2", "name": "sido zoldik", "email": "bushidaSimon@gmail.com", "age": 31},
+        {"id": "3", "name": "simon sinek", "email": "takashiUmo@gmail.com", "age": 26},
+        {"id": "4", "name": "alxeander povotkin", "email": "yamamoto@gmail.com", "age": 21},
+        {"id": "5", "name": "monky D luffy", "email": "dongkrig@gmail.com", "age": 26}
+    ]
+}
