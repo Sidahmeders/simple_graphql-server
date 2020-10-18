@@ -55,7 +55,7 @@ const MutationQuery = new GraphQLObjectType({
             args: {
                 name: {type: new GraphQLNonNull(GraphQLString)},
                 email: {type: new GraphQLNonNull(GraphQLString)},
-                age: {type: GraphQLNonNull(GraphQLString)}
+                age: {type: GraphQLNonNull(GraphQLInt)}
             },
             resolve(parentVal, args) {
                 return axios.post(`http://localhost:3000/customers`, {
@@ -63,6 +63,27 @@ const MutationQuery = new GraphQLObjectType({
                     email: args.email,
                     age: args.age
                 }).then(res => res.data)
+            }
+        },
+        deleteCustomer: {
+            type: CustomerType,
+            args: {
+                id: {type: new GraphQLNonNull(GraphQLString)}
+            },
+            resolve(parentVal, args) {
+                return axios.delete(`http://localhost:3000/customers/${args.id}`).then(res => res.data)
+            }
+        },
+        updateCustomer: {
+            type: CustomerType,
+            args: {
+                id: {type: new GraphQLNonNull(GraphQLString)},
+                name: {type: GraphQLString},
+                email: {type: GraphQLString},
+                age: {type: GraphQLInt}
+            },
+            resolve(parentVal, args) {
+                return axios.patch(`http://localhost:3000/customers/${args.id}`, args).then(res => res.data)
             }
         }
     }
